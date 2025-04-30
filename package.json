@@ -2,7 +2,7 @@
   "name": "vite_react_shadcn_ts",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://anubhav-auth.github.io/anubhav-auth.github.io/",
+  "homepage": "https://anubhav-auth.github.io/anubhav-portfolio/",
   "type": "module",
   "scripts": {
     "dev": "vite",
