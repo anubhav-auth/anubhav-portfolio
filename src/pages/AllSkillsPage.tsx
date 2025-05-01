@@ -163,7 +163,7 @@ const AllSkillsPage = () => {
                 {category.skills.map((skill, index) => (
                   <div 
                     key={`${category.title}-${skill.name}`} 
-                    className="bg-black border border-gray-800 rounded-lg p-4 flex flex-col items-center hover:border-purple-500 transition-all duration-300"
+                    className="bg-black border border-gray-800 rounded-lg p-4 flex flex-col items-center hover:border-purple-500 transition-all duration-300 transform hover:-translate-y-2 card-hover"
                   >
                     <div className="mb-3 flex items-center justify-center h-12 w-12 rounded-lg bg-gray-900">
                       {skill.icon}
