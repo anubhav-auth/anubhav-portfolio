@@ -160,7 +160,7 @@ const AllSkillsPage = () => {
               </div>
 
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                {category.skills.map((skill, index) => (
+                {category.skills.map((skill) => (
                   <div 
                     key={`${category.title}-${skill.name}`} 
                     className="bg-black border border-gray-800 rounded-lg p-4 flex flex-col items-center hover:border-purple-500 transition-all duration-300 transform hover:-translate-y-2 card-hover"
