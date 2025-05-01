@@ -1,78 +1,165 @@
+import React from "react";
 
-// Tech Stack Icons
+interface TechIconProps {
+  path?: string; // Optional, as default paths are provided
+  alt?: string;
+}
 
-export const HTML = () => (
-  <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M5.08 0L4.632 5.2H19.368L18.92 0H5.08Z" fill="#E44D26"/>
-    <path d="M12 22.131L18.908 20.436L19.8 9.6H8.1L8.4 13.2H16.005L15.623 16.884L12 17.796L8.376 16.884L8.2 14.4H4.564L5.092 19.6L12 22.131Z" fill="#E44D26"/>
-    <path d="M12 9.6H8.1L8.4 13.2H12V9.6Z" fill="#F16529"/>
-    <path d="M12 17.796L8.376 16.884L8.2 14.4H4.564L5.092 19.6L12 22.131V17.796Z" fill="#F16529"/>
-    <path d="M4.632 5.2H19.368L18.92 0H5.08L4.632 5.2Z" fill="#EBEBEB"/>
-  </svg>
+// Programming Languages
+export const Kotlin = ({ path = "https://img.icons8.com/color/32/kotlin.png", alt = "Kotlin Icon" }: TechIconProps) => (
+  <img src={path} alt={alt} className="w-8 h-8" />
 );
 
-export const Kotlin = () => (
-  <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path
-      d="M4 4H20L4 20V4Z"
-      fill="#A97BFF"
-    />
-    <path
-      d="M4 4L12 12L4 20V4Z"
-      fill="#7F52FF"
-    />
-    <path
-      d="M4 4H12V12L4 4Z"
-      fill="#C0C4CC"
-    />
-  </svg>
+export const Java = ({ path = "https://img.icons8.com/color/32/java-coffee-cup-logo.png", alt = "Java Icon" }: TechIconProps) => (
+  <img src={path} alt={alt} className="w-8 h-8" />
 );
 
-export const CSS = () => (
-  <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M4.192 3.143H19.808L18.266 18.251L11.973 20L5.733 18.251L4.192 3.143Z" fill="#264DE4"/>
-    <path d="M16.161 6.762H12.12V8.974H13.844L13.698 10.173H12.12V12.383H13.535L13.373 13.772L11.995 14.259L10.629 13.772L10.521 12.529H8.353L8.565 14.994L11.995 16L15.437 14.994L16.161 6.762Z" fill="#EBEBEB"/>
-  </svg>
+export const Rust = ({ path = "https://img.icons8.com/color/32/rust-programming-language.png", alt = "Rust Icon" }: TechIconProps) => (
+  <img src={path} alt={alt} className="w-8 h-8" />
 );
 
-export const Javascript = () => (
-  <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 0H24V24H0V0Z" fill="#F7DF1E"/>
-    <path d="M16.344 18.124C16.802 18.894 17.48 19.452 18.504 19.452C19.352 19.452 19.918 19.016 19.918 18.404C19.918 17.674 19.344 17.414 18.364 16.996L17.83 16.772C16.314 16.146 15.294 15.344 15.294 13.624C15.294 12.052 16.512 10.856 18.428 10.856C19.824 10.856 20.825 11.31 21.54 12.572L19.834 13.65C19.466 12.974 19.062 12.714 18.428 12.714C17.782 12.714 17.376 13.12 17.376 13.65C17.376 14.3 17.782 14.56 18.7 14.95L19.234 15.174C20.996 15.91 22.016 16.68 22.016 18.446C22.016 20.338 20.538 21.336 18.546 21.336C16.596 21.336 15.294 20.444 14.7 19.178L16.344 18.124ZM8.58 18.292C8.918 18.892 9.22 19.396 9.98 19.396C10.704 19.396 11.156 19.108 11.156 18.026V10.856H13.28V18.05C13.28 20.234 12.052 21.33 10.044 21.33C8.224 21.33 7.176 20.372 6.656 19.29L8.58 18.292Z" fill="black"/>
-  </svg>
+export const JavaScript = ({ path = "https://img.icons8.com/color/32/javascript.png", alt = "JavaScript Icon" }: TechIconProps) => (
+  <img src={path} alt={alt} className="w-8 h-8" />
 );
 
-export const React = () => (
-  <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M12 13.992C13.104 13.992 14 13.097 14 11.992C14 10.887 13.104 9.992 12 9.992C10.895 9.992 10 10.887 10 11.992C10 13.097 10.895 13.992 12 13.992Z" fill="#61DAFB"/>
-    <path d="M12 17.272C18.091 17.272 23.016 14.911 23.016 11.991C23.016 9.071 18.091 6.71 12 6.71C5.909 6.71 0.984 9.071 0.984 11.991C0.984 14.911 5.909 17.272 12 17.272Z" stroke="#61DAFB" strokeWidth="1.5"/>
-    <path d="M8.408 14.631C11.453 19.565 15.687 22.427 18.273 21.015C20.86 19.603 20.553 14.302 17.508 9.368C14.464 4.434 10.23 1.572 7.644 2.984C5.057 4.396 5.364 9.697 8.408 14.631Z" stroke="#61DAFB" strokeWidth="1.5"/>
-    <path d="M8.408 9.368C5.364 14.302 5.057 19.603 7.643 21.015C10.229 22.428 14.463 19.565 17.508 14.631C20.552 9.697 20.859 4.396 18.273 2.984C15.686 1.572 11.452 4.434 8.408 9.368Z" stroke="#61DAFB" strokeWidth="1.5"/>
-  </svg>
+export const Python = ({ path = "https://img.icons8.com/color/32/python.png", alt = "Python Icon" }: TechIconProps) => (
+  <img src={path} alt={alt} className="w-8 h-8" />
 );
 
-export const NodeJs = () => (
-  <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M11.899 24C11.578 24 11.268 23.916 10.988 23.759L8.362 22.197C7.926 21.956 8.138 21.881 8.287 21.834C8.877 21.629 8.989 21.584 9.539 21.266C9.596 21.23 9.669 21.246 9.728 21.282L11.776 22.512C11.848 22.55 11.951 22.55 12.019 22.512L20.063 17.887C20.135 17.848 20.182 17.765 20.182 17.681V8.431C20.182 8.345 20.135 8.263 20.062 8.223L12.019 3.603C11.947 3.564 11.848 3.564 11.776 3.603L3.737 8.223C3.664 8.264 3.616 8.346 3.616 8.431V17.681C3.616 17.765 3.664 17.846 3.737 17.884L6.048 19.202C7.307 19.839 8.057 19.147 8.057 18.453V9.226C8.057 9.098 8.159 8.995 8.287 8.995H9.155C9.282 8.995 9.386 9.098 9.386 9.226V18.454C9.386 20.041 8.536 20.979 7.038 20.979C6.571 20.979 6.207 20.979 5.115 20.433L2.902 19.178C2.332 18.855 2 18.252 2 17.61V8.298C2 7.655 2.332 7.052 2.902 6.73L10.989 2.08C11.546 1.768 12.254 1.768 12.809 2.08L20.9 6.73C21.47 7.053 21.801 7.655 21.801 8.298V17.61C21.801 18.252 21.47 18.854 20.9 19.178L12.81 23.827C12.529 23.957 12.22 23.999 11.899 24Z" fill="#8CC84B"/>
-    <path d="M14.687 14.89C11.037 14.89 10.285 13.347 10.285 12.056C10.285 11.928 10.388 11.825 10.515 11.825H11.403C11.516 11.825 11.614 11.912 11.629 12.025C11.793 13.037 12.196 13.543 14.688 13.543C16.675 13.543 17.477 13.144 17.477 12.216C17.477 11.72 17.275 11.347 14.206 11.123C11.644 10.935 10.015 10.451 10.015 8.689C10.015 7.05 11.382 6.063 14.377 6.063C17.722 6.063 19.003 7.155 19.137 9.115C19.142 9.181 19.118 9.244 19.074 9.294C19.029 9.342 18.966 9.369 18.901 9.369H18.009C17.902 9.369 17.808 9.29 17.787 9.184C17.537 8.001 16.855 7.41 14.376 7.41C12.132 7.41 11.571 7.966 11.571 8.657C11.571 9.456 12.037 9.677 14.926 9.967C17.784 10.254 19.033 10.715 19.033 12.454C19.033 14.223 17.571 14.889 14.686 14.889H14.687Z" fill="#8CC84B"/>
-  </svg>
+export const Cpp = ({ path = "https://img.icons8.com/color/32/c-plus-plus-logo.png", alt = "C++ Icon" }: TechIconProps) => (
+  <img src={path} alt={alt} className="w-8 h-8" />
 );
 
-export const Git = () => (
-  <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M23.546 10.93L13.067 0.451a1.543 1.543 0 0 0-2.183 0L8.632 2.702 11.392 5.462a1.83 1.83 0 0 1 2.316 2.333l2.666 2.665a1.83 1.83 0 0 1 2.335 2.318l4.837-4.837a1.542 1.542 0 0 0 0-2.181M8.16 15.841a1.827 1.827 0 0 1-1.83 1.83 1.827 1.827 0 0 1-1.829-1.83 1.83 1.83 0 0 1 1.83-1.83c.054 0 .107.003.16.01a1.83 1.83 0 0 1 1.669 1.82M1.193 22.339a2.31 2.31 0 0 1-.342-1.216c0-1.277 1.035-2.313 2.312-2.313s2.313 1.036 2.313 2.313a2.31 2.31 0 0 1-2.313 2.312c-.823 0-1.548-.432-1.97-1.096" fill="#F05033"/>
-  </svg>
+export const HTML = ({ path = "https://img.icons8.com/color/32/html-5.png", alt = "HTML Icon" }: TechIconProps) => (
+  <img src={path} alt={alt} className="w-8 h-8" />
 );
 
-export const Tailwind = () => (
-  <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M12.001 4.8C9.601 4.8 8.101 6 7.501 8.4C8.701 7.2 10.101 6.8 11.701 7.2C12.701 7.4 13.401 8.1 14.101 8.8C15.401 10.1 16.901 11.5 19.501 11.5C21.901 11.5 23.401 10.3 24.001 7.9C22.801 9.1 21.401 9.5 19.801 9.1C18.801 8.9 18.101 8.2 17.401 7.5C16.101 6.2 14.601 4.8 12.001 4.8ZM4.501 12.5C2.101 12.5 0.601 13.7 0.001 16.1C1.201 14.9 2.601 14.5 4.201 14.9C5.201 15.1 5.901 15.8 6.601 16.5C7.901 17.8 9.401 19.2 12.001 19.2C14.401 19.2 15.901 18 16.501 15.6C15.301 16.8 13.901 17.2 12.301 16.8C11.301 16.6 10.601 15.9 9.901 15.2C8.601 13.9 7.101 12.5 4.501 12.5Z" fill="#06B6D4"/>
-  </svg>
+export const CSS = ({ path = "https://img.icons8.com/color/32/css3.png", alt = "CSS Icon" }: TechIconProps) => (
+  <img src={path} alt={alt} className="w-8 h-8" />
 );
 
-export const Python = () => (
-  <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M11.571 0C5.657 0 6.057 2.571 6.057 2.571V5.143H11.657V6H3.829C3.829 6 0 5.486 0 11.571C0 17.657 3.343 17.486 3.343 17.486H5.314V14.829C5.314 14.829 5.143 11.486 8.571 11.486H14.057C14.057 11.486 17.229 11.571 17.229 8.4V3.429C17.229 3.429 17.743 0 11.571 0ZM8.486 1.714C8.486 1.714 11.143 1.714 11.143 4.457C11.143 7.2 8.486 7.2 8.486 7.2C8.486 7.2 5.829 7.2 5.829 4.457C5.829 1.714 8.486 1.714 8.486 1.714Z" fill="#3776AB"/>
-    <path d="M12.429 24C18.343 24 17.943 21.429 17.943 21.429V18.857H12.343V18H20.171C20.171 18 24 18.514 24 12.429C24 6.343 20.657 6.514 20.657 6.514H18.686V9.171C18.686 9.171 18.857 12.514 15.429 12.514H9.943C9.943 12.514 6.771 12.429 6.771 15.6V20.571C6.771 20.571 6.257 24 12.429 24ZM15.514 22.286C15.514 22.286 12.857 22.286 12.857 19.543C12.857 16.8 15.514 16.8 15.514 16.8C15.514 16.8 18.171 16.8 18.171 19.543C18.171 22.286 15.514 22.286 15.514 22.286Z" fill="#3776AB"/>
-  </svg>
+export const Bash = ({ path = "https://img.icons8.com/color/32/bash.png", alt = "Bash Icon" }: TechIconProps) => (
+  <img src={path} alt={alt} className="w-8 h-8" />
+);
+
+// Frameworks and Technologies
+export const AndroidStudio = ({ path = "https://img.icons8.com/color/32/android-studio--v2.png", alt = "Android Studio Icon" }: TechIconProps) => (
+  <img src={path} alt={alt} className="w-8 h-8" />
+);
+
+export const Apollo = ({ path = "https://img.icons8.com/color/32/apollo.png", alt = "Apollo Icon" }: TechIconProps) => (
+  <img src={path} alt={alt} className="w-8 h-8" />
+);
+
+export const Ktor = ({ path = "https://via.placeholder.com/32?text=Ktor", alt = "Ktor Icon" }: TechIconProps) => (
+  <img src={path} alt={alt} className="w-8 h-8" />
+);
+
+export const SpringBoot = ({ path = "https://img.icons8.com/color/32/spring-logo.png", alt = "Spring Boot Icon" }: TechIconProps) => (
+  <img src={path} alt={alt} className="w-8 h-8" />
+);
+
+export const GraphQL = ({ path = "https://img.icons8.com/color/32/graphql.png", alt = "GraphQL Icon" }: TechIconProps) => (
+  <img src={path} alt={alt} className="w-8 h-8" />
+);
+
+export const Nginx = ({ path = "https://img.icons8.com/color/32/nginx.png", alt = "NGINX Icon" }: TechIconProps) => (
+  <img src={path} alt={alt} className="w-8 h-8" />
+);
+
+export const Redis = ({ path = "https://img.icons8.com/color/32/redis.png", alt = "Redis Icon" }: TechIconProps) => (
+  <img src={path} alt={alt} className="w-8 h-8" />
+);
+
+export const Kafka = ({ path = "https://img.icons8.com/color/32/kafka.png", alt = "Kafka Icon" }: TechIconProps) => (
+  <img src={path} alt={alt} className="w-8 h-8" />
+);
+
+// Databases
+export const MySQL = ({ path = "https://img.icons8.com/color/32/mysql-logo.png", alt = "MySQL Icon" }: TechIconProps) => (
+  <img src={path} alt={alt} className="w-8 h-8" />
+);
+
+export const MongoDB = ({ path = "https://img.icons8.com/color/32/mongodb.png", alt = "MongoDB Icon" }: TechIconProps) => (
+  <img src={path} alt={alt} className="w-8 h-8" />
+);
+
+export const SQLite = ({ path = "https://img.icons8.com/color/32/sqlite.png", alt = "SQLite Icon" }: TechIconProps) => (
+  <img src={path} alt={alt} className="w-8 h-8" />
+);
+
+export const Postgres = ({ path = "https://img.icons8.com/color/32/postgreesql.png", alt = "PostgreSQL Icon" }: TechIconProps) => (
+  <img src={path} alt={alt} className="w-8 h-8" />
+);
+
+export const Firebase = ({ path = "https://img.icons8.com/color/32/firebase.png", alt = "Firebase Icon" }: TechIconProps) => (
+  <img src={path} alt={alt} className="w-8 h-8" />
+);
+
+// Tools and Platforms
+export const VSCode = ({ path = "https://img.icons8.com/color/32/visual-studio-code-2019.png", alt = "VS Code Icon" }: TechIconProps) => (
+  <img src={path} alt={alt} className="w-8 h-8" />
+);
+
+export const IntelliJ = ({ path = "https://img.icons8.com/color/32/intellij-idea.png", alt = "IntelliJ IDEA Icon" }: TechIconProps) => (
+  <img src={path} alt={alt} className="w-8 h-8" />
+);
+
+export const PyCharm = ({ path = "https://img.icons8.com/color/32/pycharm.png", alt = "PyCharm Icon" }: TechIconProps) => (
+  <img src={path} alt={alt} className="w-8 h-8" />
+);
+
+export const WebStorm = ({ path = "https://img.icons8.com/color/32/webstorm.png", alt = "WebStorm Icon" }: TechIconProps) => (
+  <img src={path} alt={alt} className="w-8 h-8" />
+);
+
+export const Docker = ({ path = "https://img.icons8.com/color/32/docker.png", alt = "Docker Icon" }: TechIconProps) => (
+  <img src={path} alt={alt} className="w-8 h-8" />
+);
+
+export const Figma = ({ path = "https://img.icons8.com/color/32/figma.png", alt = "Figma Icon" }: TechIconProps) => (
+  <img src={path} alt={alt} className="w-8 h-8" />
+);
+
+export const Git = ({ path = "https://img.icons8.com/color/32/git.png", alt = "Git Icon" }: TechIconProps) => (
+  <img src={path} alt={alt} className="w-8 h-8" />
+);
+
+export const GitHub = ({ path = "https://img.icons8.com/color/32/github.png", alt = "GitHub Icon" }: TechIconProps) => (
+  <img src={path} alt={alt} className="w-8 h-8" />
+);
+
+export const Postman = ({ path = "https://img.icons8.com/color/32/postman.png", alt = "Postman Icon" }: TechIconProps) => (
+  <img src={path} alt={alt} className="w-8 h-8" />
+);
+
+export const Blender = ({ path = "https://img.icons8.com/color/32/blender-3d.png", alt = "Blender Icon" }: TechIconProps) => (
+  <img src={path} alt={alt} className="w-8 h-8" />
+);
+
+export const Linux = ({ path = "https://img.icons8.com/color/32/linux.png", alt = "Linux Icon" }: TechIconProps) => (
+  <img src={path} alt={alt} className="w-8 h-8" />
+);
+
+
+// Python ML Libraries
+
+export const FastAI = ({ path = "https://via.placeholder.com/32?text=fastai", alt = "fastai Icon" }: TechIconProps) => (
+  <img src={path} alt={alt} className="w-8 h-8" />
+);
+
+export const Matplotlib = ({ path = "https://via.placeholder.com/32?text=matplotlib", alt = "Matplotlib Icon" }: TechIconProps) => (
+  <img src={path} alt={alt} className="w-8 h-8" />
+);
+
+export const NumPy = ({ path = "https://img.icons8.com/color/32/numpy.png", alt = "NumPy Icon" }: TechIconProps) => (
+  <img src={path} alt={alt} className="w-8 h-8" />
+);
+
+export const Pandas = ({ path = "https://img.icons8.com/color/32/pandas.png", alt = "Pandas Icon" }: TechIconProps) => (
+  <img src={path} alt={alt} className="w-8 h-8" />
+);
+
+export const ScikitLearn = ({ path = "https://via.placeholder.com/32?text=sklearn", alt = "Scikit-learn Icon" }: TechIconProps) => (
+  <img src={path} alt={alt} className="w-8 h-8" />
 );

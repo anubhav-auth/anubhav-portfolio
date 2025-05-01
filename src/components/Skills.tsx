@@ -1,7 +1,16 @@
-
 import { useEffect, useRef } from 'react';
 import { Card } from "@/components/ui/card";
-import { HTML, CSS, Javascript, React, NodeJs, Git, Tailwind, Python, Kotlin } from './TechIcons';
+import { Link } from 'react-router-dom'; // Make sure you have react-router installed
+import {
+  HTML,
+  CSS,
+  JavaScript,
+  Python,
+  Git,
+  MongoDB,
+  Docker
+} from "./TechIcons";
+import { ArrowRight } from 'lucide-react'; // Import the arrow icon from lucide-react
 
 interface Skill {
   name: string;
@@ -23,27 +32,22 @@ const skills: Skill[] = [
   {
     name: "JavaScript",
     description: "A programming language that enables interactive web pages and is an essential part of web applications.",
-    icon: <Kotlin />
+    icon: <JavaScript />
   },
   {
     name: "React",
     description: "A JavaScript library for building user interfaces, particularly single-page applications.",
-    icon: <React />
+    icon: <JavaScript />
   },
   {
     name: "Node.js",
     description: "A JavaScript runtime built on Chrome's V8 JavaScript engine for building scalable network applications.",
-    icon: <NodeJs />
+    icon: <MongoDB />
   },
   {
     name: "Git",
     description: "A distributed version control system for tracking changes in source code during software development.",
     icon: <Git />
-  },
-  {
-    name: "Tailwind CSS",
-    description: "A utility-first CSS framework for rapidly building custom user interfaces.",
-    icon: <Tailwind />
   },
   {
     name: "Python",
@@ -107,6 +111,23 @@ const Skills = () => {
               </div>
             </Card>
           ))}
+          
+          {/* "View All Skills" Card */}
+          <Link to="/all-skills" className="block">
+            <Card className="skill-card opacity-0 bg-black border border-gray-800 p-6 rounded-xl card-hover group hover:border-purple-500 transition-all duration-300">
+              <div className="flex flex-col h-full items-center justify-center">
+                <div className="mb-4 flex items-center justify-center h-16 w-16 rounded-lg bg-gray-900 mx-auto">
+                  <div className="text-3xl text-purple-500 group-hover:text-purple-400 transition-colors duration-300">+</div>
+                </div>
+                <h3 className="text-xl font-semibold mb-2 text-center">View All Skills</h3>
+                <p className="text-gray-400 text-center flex-grow mb-4">Explore my full tech stack organized by categories</p>
+                <div className="flex items-center text-purple-500 group-hover:text-purple-400 transition-all duration-300">
+                  <span className="mr-2">Explore</span>
+                  <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform duration-300" />
+                </div>
+              </div>
+            </Card>
+          </Link>
         </div>
       </div>
     </section>
