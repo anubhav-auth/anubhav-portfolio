@@ -39,7 +39,8 @@ const Index = () => {
   const [showWelcome, setShowWelcome] = useState(true);
   const [welcomeExiting, setWelcomeExiting] = useState(false);
   const [startTyping, setStartTyping] = useState(false);
-  
+
+
   // Prevent scrolling when welcome page is shown
   useEffect(() => {
     if (showWelcome) {
@@ -47,21 +48,23 @@ const Index = () => {
     } else {
       document.body.style.overflow = '';
     }
+    
     return () => {
       document.body.style.overflow = '';
     };
   }, [showWelcome]);
 
   const handleWelcomeComplete = () => {
-    // Trigger exit animation
+    // Start exit animation first
     setWelcomeExiting(true);
-    // After slide-up completes (700ms transition + buffer), hide welcome and start typewriter after 500ms
+    
+    // After animation completes, remove the component
     setTimeout(() => {
       setShowWelcome(false);
       setTimeout(() => {
         setStartTyping(true);
-      }, 500);
-    }, 800);
+      }, 300);
+    }, 800); // Match with transition duration
   };
 
   return (
@@ -76,8 +79,8 @@ const Index = () => {
       
       <div className={`bg-black text-white min-h-screen transition-opacity duration-500 ${showWelcome ? 'opacity-40' : 'opacity-100'}`}>
         <Navigation />
-        {/* Pass startTyping flag to delay typing effect until after welcome animation */}
-        <Hero startTyping={startTyping} />
+        <Hero startTyping={startTyping}/>
+        <Skills />
         <About />
         <Projects />
         <Contact />
