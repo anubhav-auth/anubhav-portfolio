@@ -46,7 +46,7 @@ const About = () => {
               <div className="relative">
                 <div className="aspect-square rounded-2xl overflow-hidden border-2 border-neon-purple/30">
                   <img 
-                    src={img2} 
+                    src={img1}
                     alt="Developer" 
                     className="w-full h-full object-cover"
                   />

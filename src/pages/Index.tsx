@@ -40,6 +40,16 @@ const Index = () => {
   const [welcomeExiting, setWelcomeExiting] = useState(false);
   const [startTyping, setStartTyping] = useState(false);
 
+  // Check sessionStorage on component mount to see if welcome has been shown in this session
+  useEffect(() => {
+    const hasSeenWelcomeThisSession = sessionStorage.getItem('hasSeenWelcome') === 'true';
+    
+    if (hasSeenWelcomeThisSession) {
+      // Skip welcome screen if already seen in this session
+      setShowWelcome(false);
+      setStartTyping(true);
+    }
+  }, []);
 
   // Prevent scrolling when welcome page is shown
   useEffect(() => {
@@ -55,6 +65,9 @@ const Index = () => {
   }, [showWelcome]);
 
   const handleWelcomeComplete = () => {
+    // Store in sessionStorage that welcome has been shown for this session only
+    sessionStorage.setItem('hasSeenWelcome', 'true');
+    
     // Start exit animation first
     setWelcomeExiting(true);
     

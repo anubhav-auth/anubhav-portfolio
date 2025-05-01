@@ -32,7 +32,7 @@ const Hero = ({
       timeout = setTimeout(() => {
         setDisplayedTitle((prev) => prev + currentTitle[currentIndex]);
         setCurrentIndex((prev) => prev + 1);
-      }, 50);
+      }, 40);
     } else if (!isDeleting && currentIndex === currentTitle.length) {
       // Pause before deleting
       timeout = setTimeout(() => setIsDeleting(true), 1000);
@@ -41,7 +41,7 @@ const Hero = ({
       timeout = setTimeout(() => {
         setDisplayedTitle((prev) => prev.slice(0, -1));
         setCurrentIndex((prev) => prev - 1);
-      }, 50);
+      }, 25);
     } else if (isDeleting && currentIndex === 0) {
       // Move to next title
       timeout = setTimeout(() => {
