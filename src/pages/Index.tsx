@@ -38,6 +38,7 @@ const smoothScrollTo = (targetY: number, duration: number) => {
 const Index = () => {
   const [showWelcome, setShowWelcome] = useState(true);
   const [welcomeExiting, setWelcomeExiting] = useState(false);
+  const [startTyping, setStartTyping] = useState(false);
   
   // Prevent scrolling when welcome page is shown
   useEffect(() => {
@@ -46,20 +47,21 @@ const Index = () => {
     } else {
       document.body.style.overflow = '';
     }
-    
     return () => {
       document.body.style.overflow = '';
     };
   }, [showWelcome]);
 
   const handleWelcomeComplete = () => {
-    // Start exit animation first
+    // Trigger exit animation
     setWelcomeExiting(true);
-    
-    // After animation completes, remove the component
+    // After slide-up completes (700ms transition + buffer), hide welcome and start typewriter after 500ms
     setTimeout(() => {
       setShowWelcome(false);
-    }, 800); // Match with transition duration
+      setTimeout(() => {
+        setStartTyping(true);
+      }, 500);
+    }, 800);
   };
 
   return (
@@ -74,8 +76,8 @@ const Index = () => {
       
       <div className={`bg-black text-white min-h-screen transition-opacity duration-500 ${showWelcome ? 'opacity-40' : 'opacity-100'}`}>
         <Navigation />
-        <Hero name="Anubhav Jaiswal" title="Full-Stack Engineer | Creative Thinker | Builder" />
-        <Skills />
+        {/* Pass startTyping flag to delay typing effect until after welcome animation */}
+        <Hero startTyping={startTyping} />
         <About />
         <Projects />
         <Contact />
