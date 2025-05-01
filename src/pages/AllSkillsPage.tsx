@@ -28,75 +28,111 @@ interface SkillCategory {
 
 const skillCategories: SkillCategory[] = [
   {
-    title: "Backend",
-    description: "I love problem-solving and building complex systems. I strive to create scalable, reliable, and secure solutions.",
+    title: "Android Development",
+    description: "Experienced in building modern Android applications using Jetpack Compose, Kotlin, and integrating APIs and architectural patterns like MVVM.",
     skills: [
-      { name: "TypeScript", icon: <JavaScript /> },
-      { name: "Node.js", icon: <JavaScript /> },
-      { name: "Express", icon: <JavaScript /> },
-      { name: "Python", icon: <Python /> },
-      { name: "GraphQL", icon: <GraphQL /> },
-      { name: "NestJS", icon: <JavaScript /> },
+      { name: "Kotlin", icon: <Kotlin /> },
       { name: "Java", icon: <Java /> },
+      { name: "Android Studio", icon: <AndroidStudio /> },
+      { name: "Jetpack Compose", icon: <Kotlin /> }, // placeholder icon
+      { name: "Ktor", icon: <Ktor /> },
+      { name: "Retrofit", icon: <Ktor /> },
+      { name: "Koin", icon: <Ktor /> },
+      { name: "Dagger$Hilt", icon: <Ktor /> },
+      { name: "Apollo Client", icon: <Apollo /> },
+      { name: "Firebase", icon: <Firebase /> },
+      { name: "SQLite", icon: <SQLite /> },
+    ]
+  },
+  {
+    title: "Backend Development",
+    description: "Skilled in building robust, scalable, and secure REST/GraphQL APIs using modern backend frameworks, event-driven architectures, and database systems.",
+    skills: [
       { name: "Spring Boot", icon: <SpringBoot /> },
+      { name: "Ktor", icon: <Ktor /> },
+      { name: "GraphQL", icon: <GraphQL /> },
       { name: "Kafka", icon: <Kafka /> },
       { name: "Redis", icon: <Redis /> },
       { name: "MongoDB", icon: <MongoDB /> },
       { name: "PostgreSQL", icon: <Postgres /> },
       { name: "MySQL", icon: <MySQL /> },
-      { name: "SQLite", icon: <SQLite /> }
     ]
   },
   {
-    title: "Frontend & Design",
-    description: "I'm passionate about design, animation, and interactions, always aiming to build fun websites with great user experiences.",
+    title: "Web Development",
+    description: "Focused on crafting responsive web interfaces and dynamic applications using modern frameworks and design systems.",
     skills: [
-      { name: "HTML", icon: <HTML /> },
-      { name: "CSS", icon: <CSS /> },
       { name: "JavaScript", icon: <JavaScript /> },
-      { name: "React", icon: <JavaScript /> },
-      { name: "Vue", icon: <JavaScript /> },
-      { name: "Svelte", icon: <JavaScript /> },
-      { name: "Tailwind CSS", icon: <CSS /> },
-      { name: "Figma", icon: <Figma /> },
-      { name: "Framer Motion", icon: <JavaScript /> },
-      { name: "GSAP", icon: <JavaScript /> },
-      { name: "Three.js", icon: <JavaScript /> },
-      { name: "WebGL", icon: <JavaScript /> }
+      { name: "HTML5", icon: <HTML /> },
+      { name: "CSS3", icon: <CSS /> },
+      { name: "React", icon: <JavaScript /> }, // Consider custom React icon if available
+      { name: "Tailwind CSS", icon: <CSS /> }, // Consider Tailwind icon if available
+    ]
+  },
+  {
+    title: "Blockchain Development",
+    description: "Smart contract development and decentralized application architecture on Solana.",
+    skills: [
+      { name: "Solana", icon: <Rust /> },
+      { name: "Rust", icon: <Rust /> },
+      { name: "Anchor Framework", icon: <Rust /> }
+    ]
+  },
+  {
+    title: "AI/ML & Data Science",
+    description: "Applied machine learning and data science using Python-based libraries for research, experimentation, and deployment.",
+    skills: [
+      { name: "Python", icon: <Python /> },
+      { name: "NumPy", icon: <NumPy /> },
+      { name: "Pandas", icon: <Pandas /> },
+      { name: "Matplotlib", icon: <Matplotlib /> },
+      { name: "Scikit-Learn", icon: <ScikitLearn /> },
+      { name: "FastAI", icon: <FastAI /> },
     ]
   },
   {
     title: "Cloud & DevOps",
-    description: "I have deployed and managed various applications using tools such as AWS, GCP, and other cloud services.",
+    description: "Experience in containerization, orchestration, CI/CD, reverse proxies, and infrastructure automation on Linux-based systems.",
     skills: [
-      { name: "AWS", icon: <Linux /> },
-      { name: "GCP", icon: <Linux /> },
       { name: "Docker", icon: <Docker /> },
-      { name: "Kubernetes", icon: <Linux /> },
-      { name: "Terraform", icon: <Linux /> },
+      { name: "Kubernetes", icon: <Linux /> }, // Placeholder
       { name: "GitHub Actions", icon: <GitHub /> },
-      { name: "Jenkins", icon: <Linux /> },
       { name: "Nginx", icon: <Nginx /> },
       { name: "Linux", icon: <Linux /> },
       { name: "Bash", icon: <Bash /> },
-      { name: "Prometheus", icon: <Linux /> },
-      { name: "Grafana", icon: <Linux /> }
     ]
   },
   {
-    title: "Management",
-    description: "I have worked with multiple clients and stakeholders to define projects that suit their needs and have led these projects.",
+    title: "Tools & IDEs",
+    description: "Daily drivers for development, debugging, design, and version control across various platforms.",
     skills: [
-      { name: "Agile", icon: <GitHub /> },
-      { name: "Scrum", icon: <GitHub /> },
-      { name: "Jira", icon: <GitHub /> },
-      { name: "Confluence", icon: <GitHub /> },
-      { name: "Trello", icon: <GitHub /> },
-      { name: "Notion", icon: <GitHub /> },
-      { name: "Office", icon: <Linux /> }
+      { name: "VS Code", icon: <VSCode /> },
+      { name: "IntelliJ IDEA", icon: <IntelliJ /> },
+      { name: "Android Studio", icon: <AndroidStudio /> },
+      { name: "PyCharm", icon: <PyCharm /> },
+      { name: "WebStorm", icon: <WebStorm /> },
+      { name: "Figma", icon: <Figma /> },
+      { name: "Postman", icon: <Postman /> },
+      { name: "Git", icon: <Git /> },
+      { name: "GitHub", icon: <GitHub /> },
+      { name: "Blender", icon: <Blender /> },
+    ]
+  },
+  {
+    title: "Soft Skills & Management",
+    description: "Led multiple technical projects with agile practices and cross-functional collaboration with designers, developers, and stakeholders.",
+    skills: [
+      { name: "Agile", icon: <GitHub /> }, // Placeholder
+      { name: "Scrum", icon: <GitHub /> }, // Placeholder
+      { name: "Jira", icon: <GitHub /> }, // Placeholder
+      { name: "Confluence", icon: <GitHub /> }, // Placeholder
+      { name: "Trello", icon: <GitHub /> }, // Placeholder
+      { name: "Notion", icon: <GitHub /> }, // Placeholder
+      { name: "MS Office", icon: <Linux /> }, // Placeholder
     ]
   }
 ];
+
 
 const AllSkillsPage = () => {
   const categoryRefs = useRef<(HTMLDivElement | null)[]>([]);

@@ -43,7 +43,7 @@ export const Bash = ({ path = "https://img.icons8.com/color/32/bash.png", alt = 
 );
 
 // Frameworks and Technologies
-export const AndroidStudio = ({ path = "https://img.icons8.com/color/32/android-studio--v2.png", alt = "Android Studio Icon" }: TechIconProps) => (
+export const AndroidStudio = ({ path = "https://img.icons8.com/color/48/android-studio--v3.png", alt = "Android Studio Icon" }: TechIconProps) => (
   <img src={path} alt={alt} className="w-8 h-8" />
 );
 
@@ -51,8 +51,8 @@ export const Apollo = ({ path = "https://img.icons8.com/color/32/apollo.png", al
   <img src={path} alt={alt} className="w-8 h-8" />
 );
 
-export const Ktor = ({ path = "https://via.placeholder.com/32?text=Ktor", alt = "Ktor Icon" }: TechIconProps) => (
-  <img src={path} alt={alt} className="w-8 h-8" />
+export const Ktor = ({ path = "", alt = "Ktor Icon" }: TechIconProps) => (
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 96 96" id="Ktor-Icon--Streamline-Svg-Logos" height={35} width={35} ><desc>{"Ktor Icon Streamline Icon: https://streamlinehq.com"}</desc><path fill="url(#a)" d="M63.6667 32.3333 48.065 16.7317 32.3333 1l-16.544 16.544L1 32.3333l31.3333 31.3334 31.3334-31.3334Z" /><path fill="url(#b)" d="m32.333 63.6667 15.6017 15.6017L63.6663 95l16.544-16.544 14.7894-14.7893-31.3334-31.3333L32.333 63.6667Z" /><path fill="#000000" d="M63.6663 32.3334H32.333v31.3333h31.3333V32.3334Z" /><defs><linearGradient id="a" x1={1502.8} x2={4678.49} y1={1502.8} y2={4678.49} gradientUnits="userSpaceOnUse"><stop offset={0.296} stopColor="#00afff" /><stop offset={0.694} stopColor="#5282ff" /><stop offset={1} stopColor="#945dff" /></linearGradient><linearGradient id="b" x1={1674.55} x2={4676.98} y1={1674.55} y2={4676.98} gradientUnits="userSpaceOnUse"><stop offset={0.108} stopColor="#c757bc" /><stop offset={0.173} stopColor="#cd5ca9" /><stop offset={0.492} stopColor="#e8744f" /><stop offset={0.716} stopColor="#f88316" /><stop offset={0.823} stopColor="#ff8900" /></linearGradient></defs></svg>
 );
 
 export const SpringBoot = ({ path = "https://img.icons8.com/color/32/spring-logo.png", alt = "Spring Boot Icon" }: TechIconProps) => (
