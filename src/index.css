@@ -1,10 +1,7 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-
 @layer base {
   :root {
     --background: 240 10% 3.9%;
@@ -130,4 +127,56 @@
 .markdown-content table td {
   @apply border border-gray-700 px-4 py-2;
 }
+
+@keyframes typewriter {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+@keyframes glitch {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-5px); }
+  40% { transform: translateX(5px); }
+  60% { transform: translateX(-2px); }
+  80% { transform: translateX(2px); }
+  100% { transform: translateX(0); }
+}
+
+.holo-text {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: transparent;
+  background: linear-gradient(45deg, #00ffea, #ff00d4);
+  background-clip: text;
+  animation: typewriter 3s steps(12) 1s forwards, blink 0.7s step-end infinite, glitch 1s infinite;
+  display: inline-block;
+  white-space: nowrap;
+  border-right: 3px solid #00ffea; /* Cursor effect */
+  overflow: hidden;
+  position: relative;
+}
+
+.holo-text:hover {
+  animation: glitch 1s infinite alternate;
+}
+
+.holo-text::after {
+  content: '|';
+  position: absolute;
+  right: -5px;
+  top: 0;
+  color: #00ffea;
+  font-weight: normal;
+  animation: blink 0.7s step-end infinite;
+}
+
+.holo-text:hover::after {
+  color: transparent; /* Hide cursor during hover */
+}
+
 
