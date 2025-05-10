@@ -6,30 +6,9 @@ import { Button } from "@/components/ui/button";
 import { projects } from '@/components/Projects';
 import { ArrowRight, ExternalLink, Github } from 'lucide-react';
 
-// Additional projects for the "All Projects" page
-const additionalProjects = [
-  {
-    id: "ai-chatbot",
-    title: "AI Chatbot Assistant",
-    description: "An intelligent chatbot assistant powered by machine learning that can answer questions, provide recommendations, and assist with various tasks.",
-    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
-    technologies: ["Python", "TensorFlow", "NLP", "Flask API"],
-    demoUrl: "#",
-    githubUrl: "#"
-  },
-  {
-    id: "mobile-fitness-app",
-    title: "Mobile Fitness Tracker",
-    description: "A cross-platform fitness tracking application that monitors workouts, nutrition, and progress with personalized recommendations.",
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
-    technologies: ["React Native", "Redux", "Firebase", "Health APIs"],
-    demoUrl: "#",
-    githubUrl: "#"
-  }
-];
 
 // Combine existing and additional projects
-const allProjects = [...projects, ...additionalProjects];
+const allProjects = [...projects];
 
 const AllProjects = () => {
   const projectsRef = useRef<HTMLDivElement>(null);
