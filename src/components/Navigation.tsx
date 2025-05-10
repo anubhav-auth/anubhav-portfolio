@@ -56,7 +56,7 @@ const Navigation = () => {
       scrolled || !isHomePage ? 'bg-black/80 backdrop-blur-md shadow-md' : 'bg-transparent'
     }`}>
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-        <Link to="/" className="text-xl font-bold text-gradient">Portfolio</Link>
+        <Link to="/" className="text-xl font-bold text-gradient"></Link>
         <div className="hidden md:flex space-x-1">
           <Button
             variant="ghost"
