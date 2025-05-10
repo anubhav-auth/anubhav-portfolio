@@ -227,7 +227,7 @@ const Projects = () => {
           ref={projectsRef}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {projects.map((project, index) => (
+          {projects.slice(0, 3).map((project, index) => (
             <Link key={index} to={`/project/${project.id}`} className="block h-full">
               <Card className="project-card opacity-0 overflow-hidden rounded-xl border-gray-800 bg-black card-hover h-full flex flex-col">
                 <div className="h-48 overflow-hidden">
