@@ -190,3 +190,30 @@ export const Fast_ai = ({ path = "https://repository-images.githubusercontent.co
 export const Kubernetes = ({ path = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-original.svg", alt = "kubernetes Icon" }: TechIconProps) => (
   <img src={path} alt={alt} className="w-8 h-8" />
 );
+
+// social icons
+
+export const Instagram = ({ path = "https://img.icons8.com/fluency/48/instagram-new.png", alt = "Instagram Icon" }: TechIconProps) => (
+  <img src={path} alt={alt} className="w-8 h-8" />
+);
+export const Twitter = ({ path = "https://img.icons8.com/ios/50/twitterx--v1.png", alt = " Icon" }: TechIconProps) => (
+  <img src={path} alt={alt} className="w-8 h-8 invert" />
+);
+export const Linkedin = ({ path = "https://img.icons8.com/color/48/linkedin.png", alt = " Icon" }: TechIconProps) => (
+  <img src={path} alt={alt} className="w-8 h-8" />
+);
+export const Devto = ({ path = "https://img.icons8.com/color/48/dev-community.png", alt = " Icon" }: TechIconProps) => (
+  <img src={path} alt={alt} className="w-8 h-8" />
+);
+export const Medium = ({ path = "https://img.icons8.com/glyph-neue/64/medium-monogram.png", alt = " Icon" }: TechIconProps) => (
+  <img src={path} alt={alt} className="w-8 h-8 invert" />
+);
+export const Leetcode = ({ path = "https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/96/external-level-up-your-coding-skills-and-quickly-land-a-job-logo-shadow-tal-revivo.png", alt = " Icon" }: TechIconProps) => (
+  <img src={path} alt={alt} className="w-8 h-8 " />
+);
+export const Codeforces = ({ path = "https://img.icons8.com/external-tal-revivo-color-tal-revivo/48/external-codeforces-programming-competitions-and-contests-programming-community-logo-color-tal-revivo.png", alt = " Icon" }: TechIconProps) => (
+  <img src={path} alt={alt} className="w-8 h-8" />
+);
+export const Medial = ({ path = "https://medial.app/image/medial-white.png", alt = " Icon" }: TechIconProps) => (
+  <img src={path} alt={alt} className="w-8 h-8" />
+);

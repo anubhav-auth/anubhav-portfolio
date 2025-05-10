@@ -3,7 +3,8 @@ import { useEffect, useRef } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
+import { Codeforces, Devto, GitHub, Instagram, Leetcode, Medial, Medium, Twitter, Linkedin } from './TechIcons';
 
 const Contact = () => {
   const formRef = useRef<HTMLDivElement>(null);
@@ -95,7 +96,7 @@ const Contact = () => {
                     <Mail className="w-5 h-5 mr-3 text-neon-blue mt-1" />
                     <div>
                       <h4 className="font-medium">Email</h4>
-                      <p className="text-white/70">contact@example.com</p>
+                      <p className="text-white/70">anubhavauth@gmail.com</p>
                     </div>
                   </div>
                   
@@ -105,7 +106,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="font-medium">Location</h4>
-                      <p className="text-white/70">San Francisco, CA</p>
+                      <p className="text-white/70">Bhubaneswar, In</p>
                     </div>
                   </div>
                 </div>
@@ -116,16 +117,31 @@ const Contact = () => {
                 
                 <div className="flex flex-wrap gap-4">
                   <a href="#github" className="flex items-center p-3 bg-white/5 hover:bg-white/10 rounded-lg transition-colors">
-                    <Github className="w-5 h-5 mr-2" />
-                    <span>GitHub</span>
+                    <GitHub/>
                   </a>
                   <a href="#linkedin" className="flex items-center p-3 bg-white/5 hover:bg-white/10 rounded-lg transition-colors">
-                    <Linkedin className="w-5 h-5 mr-2" />
-                    <span>LinkedIn</span>
+                    <Linkedin/>
                   </a>
                   <a href="#twitter" className="flex items-center p-3 bg-white/5 hover:bg-white/10 rounded-lg transition-colors">
-                    <span className="text-xl mr-2">𝕏</span>
-                    <span>Twitter</span>
+                    <Twitter/>
+                  </a>
+                  <a href="#twitter" className="flex items-center p-3 bg-white/5 hover:bg-white/10 rounded-lg transition-colors">
+                    <Instagram/>
+                  </a>
+                  <a href="#twitter" className="flex items-center p-3 bg-white/5 hover:bg-white/10 rounded-lg transition-colors">
+                    <Devto/>
+                  </a>
+                  <a href="#twitter" className="flex items-center p-3 bg-white/5 hover:bg-white/10 rounded-lg transition-colors">
+                    <Medium/>
+                  </a>
+                  <a href="#twitter" className="flex items-center p-3 bg-white/5 hover:bg-white/10 rounded-lg transition-colors">
+                    <Medial/>
+                  </a>
+                  <a href="#twitter" className="flex items-center p-3 bg-white/5 hover:bg-white/10 rounded-lg transition-colors">
+                    <Codeforces/>
+                  </a>
+                  <a href="#twitter" className="flex items-center p-3 bg-white/5 hover:bg-white/10 rounded-lg transition-colors">
+                    <Leetcode/>
                   </a>
                 </div>
               </div>
