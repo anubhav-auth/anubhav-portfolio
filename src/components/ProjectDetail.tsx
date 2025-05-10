@@ -1,146 +1,100 @@
-
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { projects } from './Projects';
 import { Github, ExternalLink, ArrowRight } from "lucide-react";
 import { marked } from 'marked';
+import type { FC } from 'react';
 
-// Sample READMEs for each project (in real implementation these would be fetched from GitHub)
-const projectReadmes: Record<string, string> = {
-  'ecommerce-dashboard': `
-# E-Commerce Dashboard
-
-## Overview
-This comprehensive dashboard provides e-commerce businesses with real-time analytics, inventory management, and customer insights all in one place.
-
-## Features
-- Real-time sales analytics and reporting
-- Inventory management system
-- Customer behavior insights
-- Order processing and fulfillment tracking
-- User-friendly admin interface
-
-## Technologies Used
-- React for the frontend interface
-- Node.js and Express for the backend API
-- MongoDB for data storage
-- Tailwind CSS for styling
-- WebSockets for real-time updates
-
-## Installation
-\`\`\`bash
-# Clone the repository
-git clone https://github.com/username/ecommerce-dashboard.git
-
-# Install dependencies
-cd ecommerce-dashboard
-npm install
-
-# Start the development server
-npm run dev
-\`\`\`
-
-## Screenshots
-![Dashboard Overview](https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600)
-  `,
-  'task-management': `
-# Task Management Application
-
-## Overview
-A collaborative task management application with real-time updates, drag-and-drop interface, and team collaboration features.
-
-## Features
-- Drag-and-drop task organization
-- Real-time collaboration
-- Task assignment and deadline management
-- Project timelines and milestones
-- File attachments and comments
-
-## Technologies Used
-- React for the frontend with Redux for state management
-- Firebase for real-time database and authentication
-- Material UI for component styling
-- React DnD for drag-and-drop functionality
-
-## Installation
-\`\`\`bash
-# Clone the repository
-git clone https://github.com/username/task-management.git
-
-# Install dependencies
-cd task-management
-npm install
-
-# Start the development server
-npm start
-\`\`\`
-
-## Screenshots
-![Task Board](https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600)
-  `,
-  'financial-analytics': `
-# Financial Analytics Platform
-
-## Overview
-Data visualization platform for financial analysts with interactive charts, predictive modeling, and report generation.
-
-## Features
-- Interactive financial charts and graphs
-- Predictive modeling tools
-- Automated report generation
-- Data import/export functionality
-- Custom dashboard creation
-
-## Technologies Used
-- TypeScript for type-safe code
-- D3.js for data visualization
-- Express backend API
-- PostgreSQL database for data storage
-- JWT authentication
-
-## Installation
-\`\`\`bash
-# Clone the repository
-git clone https://github.com/username/financial-analytics.git
-
-# Install dependencies
-cd financial-analytics
-npm install
-
-# Set up environment variables
-cp .env.example .env
-
-# Start the development server
-npm run dev
-\`\`\`
-
-## Screenshots
-![Analytics Dashboard](https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=600)
-  `
-};
-
-const ProjectDetail = () => {
+const ProjectDetail: FC = () => {
   const { id } = useParams<{ id: string }>();
   const [readme, setReadme] = useState<string>('');
   const [project, setProject] = useState<typeof projects[0] | undefined>(undefined);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    // Find the project with the matching ID
-    const currentProject = projects.find(p => p.id === id);
-    setProject(currentProject);
+    const fetchReadme = async () => {
+      try {
+        setLoading(true);
+        setError(null);
+        
+        // Find the project with the matching ID
+        const currentProject = projects.find(p => p.id === id);
+        setProject(currentProject);
+        
+        if (currentProject && currentProject.githubUrl) {
+          // Extract owner and repo from GitHub URL
+          // Example: https://github.com/username/repo-name
+          const githubUrlParts = currentProject.githubUrl.split('/');
+          if (githubUrlParts.length >= 5) {
+            const owner = githubUrlParts[3];
+            const repo = githubUrlParts[4];
+            
+            // Fetch README from GitHub API
+            const response = await fetch(
+              `https://api.github.com/repos/${owner}/${repo}/readme`,
+              {
+                headers: {
+                  'Accept': 'application/vnd.github.v3.raw',
+                  // If you're hitting rate limits, you would add your GitHub token here
+                  // 'Authorization': `token ${process.env.GITHUB_TOKEN}`
+                }
+              }
+            );
+            
+            if (response.ok) {
+              const readmeContent = await response.text();
+              // Parse markdown to HTML
+              const parsedReadme = marked.parse(readmeContent);
+              // Handle both synchronous and asynchronous marked implementations
+              if (parsedReadme instanceof Promise) {
+                parsedReadme.then(htmlContent => {
+                  setReadme(htmlContent);
+                });
+              } else {
+                setReadme(parsedReadme);
+              }
+            } else {
+              // If README is not found, try to fetch README.md directly
+              const fallbackResponse = await fetch(
+                `https://raw.githubusercontent.com/${owner}/${repo}/main/README.md`
+              );
+              
+              if (fallbackResponse.ok) {
+                const readmeContent = await fallbackResponse.text();
+                const parsedReadme = marked.parse(readmeContent);
+                // Handle both synchronous and asynchronous marked implementations
+                if (parsedReadme instanceof Promise) {
+                  parsedReadme.then(htmlContent => {
+                    setReadme(htmlContent);
+                  });
+                } else {
+                  setReadme(parsedReadme);
+                }
+              } else {
+                throw new Error('README not found');
+              }
+            }
+          } else {
+            throw new Error('Invalid GitHub URL format');
+          }
+        } else {
+          throw new Error('Project not found or missing GitHub URL');
+        }
+      } catch (err) {
+        console.error('Error fetching README:', err);
+        setError(err instanceof Error ? err.message : 'Unknown error');
+        // Set a default README message if fetch fails
+        setReadme('<p>README not available for this project.</p>');
+      } finally {
+        setLoading(false);
+      }
+    };
     
-    if (currentProject && id && projectReadmes[id]) {
-      // In a real implementation, you would fetch the README from GitHub
-      // For this demo, we're using the static READMEs defined above
-      const readmeContent = projectReadmes[id];
-      // Parse markdown to HTML
-      const parsedReadme = marked(readmeContent);
-      setReadme(parsedReadme);
+    if (id) {
+      fetchReadme();
     }
-    
-    setLoading(false);
     
     // Scroll to top when project changes
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -149,7 +103,10 @@ const ProjectDetail = () => {
   if (loading) {
     return (
       <div className="min-h-screen bg-black flex items-center justify-center">
-        <p className="text-white">Loading project details...</p>
+        <div className="text-center">
+          <div className="w-12 h-12 border-4 border-neon-blue border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+          <p className="text-white">Loading project details...</p>
+        </div>
       </div>
     );
   }
@@ -230,9 +187,21 @@ const ProjectDetail = () => {
             </div>
           </div>
           
+          {/* Error message if fetch failed */}
+          {error && (
+            <div className="bg-red-900/30 border border-red-500 text-white p-4 rounded-lg mb-6">
+              <p className="font-medium">Couldn't load README: {error}</p>
+              <p className="text-sm mt-1">Check the GitHub repository link or network connection.</p>
+            </div>
+          )}
+          
           {/* README content */}
           <div className="bg-gray-900 rounded-xl p-6 md:p-8 prose prose-invert max-w-none">
-            <div dangerouslySetInnerHTML={{ __html: readme }} className="markdown-content" />
+            {readme ? (
+              <div dangerouslySetInnerHTML={{ __html: readme }} className="markdown-content" />
+            ) : (
+              <p>No README available for this project.</p>
+            )}
           </div>
         </div>
       </div>
