@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { Card } from "@/components/ui/card";
 import { Link } from 'react-router-dom'; // Make sure you have react-router installed
-import { Android, GraphQL, Java, Kotlin, MongoDB, SpringBoot } from "./TechIcons";
+import { Android, GraphQL, Java, Jetpack_compose, Kotlin, MongoDB, SpringBoot } from "./TechIcons";
 import { ArrowRight } from 'lucide-react'; // Import the arrow icon from lucide-react
 
 interface Skill {
@@ -29,7 +29,7 @@ const skills: Skill[] = [
   {
     name: "Jetpack Compose",
     description: "Declarative UI toolkit for Android in Kotlin.",
-    icon: <Kotlin />
+    icon: <Jetpack_compose />
   },
   {
     name: "Spring Boot",

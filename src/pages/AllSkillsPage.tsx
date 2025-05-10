@@ -11,7 +11,8 @@ import {
   // Tools and Platforms
   VSCode, IntelliJ, PyCharm, WebStorm, Docker, Figma, Git, GitHub, Postman, Blender, Linux,
   // Python ML Libraries
-  FastAI, Matplotlib, NumPy, Pandas, ScikitLearn
+  FastAI, Matplotlib, NumPy, Pandas, ScikitLearn,
+  Jetpack_compose
 } from "../components/TechIcons";
 
 // Define the types
@@ -34,7 +35,7 @@ const skillCategories: SkillCategory[] = [
       { name: "Kotlin", icon: <Kotlin /> },
       { name: "Java", icon: <Java /> },
       { name: "Android", icon: <Android /> },
-      { name: "Jetpack Compose", icon: <Kotlin /> }, // placeholder icon
+      { name: "Jetpack Compose", icon: <Jetpack_compose /> },
       { name: "Ktor", icon: <Ktor /> },
       { name: "Retrofit", icon: <Ktor /> },
       { name: "Koin", icon: <Ktor /> },
@@ -65,8 +66,8 @@ const skillCategories: SkillCategory[] = [
       { name: "JavaScript", icon: <JavaScript /> },
       { name: "HTML5", icon: <HTML /> },
       { name: "CSS3", icon: <CSS /> },
-      { name: "React", icon: <JavaScript /> }, // Consider custom React icon if available
-      { name: "Tailwind CSS", icon: <CSS /> }, // Consider Tailwind icon if available
+      { name: "React", icon: <JavaScript /> },
+      { name: "Tailwind CSS", icon: <CSS /> },
     ]
   },
   {
@@ -95,7 +96,7 @@ const skillCategories: SkillCategory[] = [
     description: "Experience in containerization, orchestration, CI/CD, reverse proxies, and infrastructure automation on Linux-based systems.",
     skills: [
       { name: "Docker", icon: <Docker /> },
-      { name: "Kubernetes", icon: <Linux /> }, // Placeholder
+      { name: "Kubernetes", icon: <Linux /> },
       { name: "GitHub Actions", icon: <GitHub /> },
       { name: "Nginx", icon: <Nginx /> },
       { name: "Linux", icon: <Linux /> },
@@ -115,20 +116,6 @@ const skillCategories: SkillCategory[] = [
       { name: "Postman", icon: <Postman /> },
       { name: "Git", icon: <Git /> },
       { name: "GitHub", icon: <GitHub /> },
-      { name: "Blender", icon: <Blender /> },
-    ]
-  },
-  {
-    title: "Soft Skills & Management",
-    description: "Led multiple technical projects with agile practices and cross-functional collaboration with designers, developers, and stakeholders.",
-    skills: [
-      { name: "Agile", icon: <GitHub /> }, // Placeholder
-      { name: "Scrum", icon: <GitHub /> }, // Placeholder
-      { name: "Jira", icon: <GitHub /> }, // Placeholder
-      { name: "Confluence", icon: <GitHub /> }, // Placeholder
-      { name: "Trello", icon: <GitHub /> }, // Placeholder
-      { name: "Notion", icon: <GitHub /> }, // Placeholder
-      { name: "MS Office", icon: <Linux /> }, // Placeholder
     ]
   }
 ];
