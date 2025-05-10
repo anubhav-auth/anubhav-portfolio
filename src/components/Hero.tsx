@@ -77,8 +77,8 @@ const Hero = ({
     const material = new THREE.MeshBasicMaterial({
       color: 0x6b46c1, // Neon purple
       wireframe: true,
-      transparent: true,
-      opacity: 0.3,
+      transparent: false,
+      opacity: 1,
       side: THREE.DoubleSide,
     });
     const plane = new THREE.Mesh(geometry, material);
