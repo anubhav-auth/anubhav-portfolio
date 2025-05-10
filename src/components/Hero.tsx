@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDown } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import * as THREE from "three";
 
 interface HeroProps {
   name?: string;
@@ -20,6 +21,7 @@ const Hero = ({
   const [currentIndex, setCurrentIndex] = useState(0);
   const [titleIndex, setTitleIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
+  const mountRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!startTyping) return;
@@ -53,6 +55,69 @@ const Hero = ({
     return () => clearTimeout(timeout);
   }, [currentIndex, isDeleting, titleIndex, titles, startTyping]);
 
+  useEffect(() => {
+    if (!mountRef.current) return;
+
+    // Scene setup
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(
+      75,
+      window.innerWidth / window.innerHeight,
+      0.1,
+      1000
+    );
+    camera.position.z = 30;
+
+    const renderer = new THREE.WebGLRenderer({ alpha: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    mountRef.current.appendChild(renderer.domElement);
+
+    // Wave geometry
+    const geometry = new THREE.PlaneGeometry(100, 100, 50, 50);
+    const material = new THREE.MeshBasicMaterial({
+      color: 0x6b46c1, // Neon purple
+      wireframe: true,
+      transparent: true,
+      opacity: 0.3,
+      side: THREE.DoubleSide,
+    });
+    const plane = new THREE.Mesh(geometry, material);
+    scene.add(plane);
+    plane.rotation.x = Math.PI / 4;
+
+    // Animation
+    let time = 0;
+    const animate = () => {
+      time += 0.01;
+      const positions = plane.geometry.attributes.position.array as unknown as number[];
+      for (let i = 0; i < positions.length; i += 3) {
+        const x = positions[i];
+        const y = positions[i + 1];
+        positions[i + 2] = Math.sin(x * 0.1 + time) * Math.cos(y * 0.1 + time) * 5;
+      }
+      plane.geometry.attributes.position.needsUpdate = true;
+
+      renderer.render(scene, camera);
+      requestAnimationFrame(animate);
+    };
+    animate();
+
+    // Handle resize
+    const handleResize = () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    };
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      mountRef.current?.removeChild(renderer.domElement);
+      renderer.dispose();
+    };
+  }, []);
+
   const scrollToProjects = () => {
     const projectsSection = document.getElementById('projects');
     if (projectsSection) {
@@ -61,8 +126,11 @@ const Hero = ({
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex flex-col items-center justify-center px-6 pt-16">
-      <div className="absolute inset-0 bg-gradient-radial from-gray-900/50 to-black z-0"></div>
+    <section id="home" className="relative min-h-screen flex flex-col items-center justify-center px-6 pt-16 overflow-hidden">
+      {/* Three.js Canvas */}
+      <div ref={mountRef} className="absolute inset-0 z-0" />
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-radial from-gray-900/50 to-black z-1"></div>
       <div className="relative z-10 max-w-4xl mx-auto text-center animate-fade-in">
         <h1 className="mb-1 text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight">
           Hi, I'm 
