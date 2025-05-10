@@ -1,15 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { Card } from "@/components/ui/card";
 import { Link } from 'react-router-dom'; // Make sure you have react-router installed
-import {
-  HTML,
-  CSS,
-  JavaScript,
-  Python,
-  Git,
-  MongoDB,
-  Docker
-} from "./TechIcons";
+import { Android, GraphQL, Java, Kotlin, MongoDB, SpringBoot } from "./TechIcons";
 import { ArrowRight } from 'lucide-react'; // Import the arrow icon from lucide-react
 
 interface Skill {
@@ -20,41 +12,43 @@ interface Skill {
 
 const skills: Skill[] = [
   {
-    name: "HTML",
-    description: "The standard markup language for documents designed to be displayed in a web browser.",
-    icon: <HTML />
+    name: "Kotlin",
+    description: "Modern language for Android and backend development.",
+    icon: <Kotlin />
   },
   {
-    name: "CSS",
-    description: "A style sheet language used for describing the presentation of a document written in HTML.",
-    icon: <CSS />
+    name: "Java",
+    description: "Versatile language for enterprise and backend systems.",
+    icon: <Java />
   },
   {
-    name: "JavaScript",
-    description: "A programming language that enables interactive web pages and is an essential part of web applications.",
-    icon: <JavaScript />
+    name: "Android",
+    description: "Google's OS for mobile and embedded devices.",
+    icon: <Android />
   },
   {
-    name: "React",
-    description: "A JavaScript library for building user interfaces, particularly single-page applications.",
-    icon: <JavaScript />
+    name: "Jetpack Compose",
+    description: "Declarative UI toolkit for Android in Kotlin.",
+    icon: <Kotlin />
   },
   {
-    name: "Node.js",
-    description: "A JavaScript runtime built on Chrome's V8 JavaScript engine for building scalable network applications.",
+    name: "Spring Boot",
+    description: "Java framework for building RESTful APIs fast.",
+    icon: <SpringBoot />
+  },
+  {
+    name: "MongoDB",
+    description: "NoSQL database for flexible, JSON-like data.",
     icon: <MongoDB />
   },
   {
-    name: "Git",
-    description: "A distributed version control system for tracking changes in source code during software development.",
-    icon: <Git />
-  },
-  {
-    name: "Python",
-    description: "A programming language that lets you work quickly and integrate systems more effectively.",
-    icon: <Python />
+    name: "GraphQL",
+    description: "Query language for flexible, efficient APIs.",
+    icon: <GraphQL />
   }
 ];
+
+
 
 const Skills = () => {
   const skillsRef = useRef<HTMLDivElement>(null);

@@ -5,7 +5,7 @@ import {
   // Programming Languages
   Kotlin, Java, Rust, JavaScript, Python, Cpp, HTML, CSS, Bash,
   // Frameworks and Technologies
-  AndroidStudio, Apollo, Ktor, SpringBoot, GraphQL, Nginx, Redis, Kafka,
+  Android, AndroidStudio, Apollo, Ktor, SpringBoot, GraphQL, Nginx, Redis, Kafka,
   // Databases
   MySQL, MongoDB, SQLite, Postgres, Firebase,
   // Tools and Platforms
@@ -33,7 +33,7 @@ const skillCategories: SkillCategory[] = [
     skills: [
       { name: "Kotlin", icon: <Kotlin /> },
       { name: "Java", icon: <Java /> },
-      { name: "Android Studio", icon: <AndroidStudio /> },
+      { name: "Android", icon: <Android /> },
       { name: "Jetpack Compose", icon: <Kotlin /> }, // placeholder icon
       { name: "Ktor", icon: <Ktor /> },
       { name: "Retrofit", icon: <Ktor /> },

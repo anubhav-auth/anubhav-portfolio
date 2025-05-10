@@ -47,6 +47,10 @@ export const AndroidStudio = ({ path = "https://img.icons8.com/color/48/android-
   <img src={path} alt={alt} className="w-8 h-8" />
 );
 
+export const Android = ({ path = "https://img.icons8.com/fluency/96/android-os.png", alt = "Android Icon" }: TechIconProps) => (
+  <img src={path} alt={alt} className="w-8 h-8" />
+);
+
 export const Apollo = ({ path = "https://img.icons8.com/color/32/apollo.png", alt = "Apollo Icon" }: TechIconProps) => (
   <img src={path} alt={alt} className="w-8 h-8" />
 );
