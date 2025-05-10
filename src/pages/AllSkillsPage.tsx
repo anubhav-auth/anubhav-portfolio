@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft } from 'lucide-react';
+import { Anchor, ArrowLeft } from 'lucide-react';
 import {
   // Programming Languages
   Kotlin, Java, Rust, JavaScript, Python, Cpp, HTML, CSS, Bash,
@@ -9,10 +9,17 @@ import {
   // Databases
   MySQL, MongoDB, SQLite, Postgres, Firebase,
   // Tools and Platforms
-  VSCode, IntelliJ, PyCharm, WebStorm, Docker, Figma, Git, GitHub, Postman, Blender, Linux,
+  VSCode, IntelliJ, PyCharm, WebStorm, Docker, Figma, Git, GitHub, Postman, Linux,
   // Python ML Libraries
-  FastAI, Matplotlib, NumPy, Pandas, ScikitLearn,
-  Jetpack_compose
+  Matplotlib, NumPy, Pandas, ScikitLearn,
+  Jetpack_compose,
+  Koin,
+  Retrofit,
+  Tailwind_CSS,
+  Solana,
+  Dagger_hilt,
+  Kubernetes,
+  Fast_ai
 } from "../components/TechIcons";
 
 // Define the types
@@ -37,9 +44,9 @@ const skillCategories: SkillCategory[] = [
       { name: "Android", icon: <Android /> },
       { name: "Jetpack Compose", icon: <Jetpack_compose /> },
       { name: "Ktor", icon: <Ktor /> },
-      { name: "Retrofit", icon: <Ktor /> },
-      { name: "Koin", icon: <Ktor /> },
-      { name: "Dagger$Hilt", icon: <Ktor /> },
+      { name: "Retrofit", icon: <Retrofit /> },
+      { name: "Koin", icon: <Koin /> },
+      { name: "Dagger-Hilt", icon: <Dagger_hilt /> },
       { name: "Apollo Client", icon: <Apollo /> },
       { name: "Firebase", icon: <Firebase /> },
       { name: "SQLite", icon: <SQLite /> },
@@ -67,16 +74,16 @@ const skillCategories: SkillCategory[] = [
       { name: "HTML5", icon: <HTML /> },
       { name: "CSS3", icon: <CSS /> },
       { name: "React", icon: <JavaScript /> },
-      { name: "Tailwind CSS", icon: <CSS /> },
+      { name: "Tailwind CSS", icon: <Tailwind_CSS /> },
     ]
   },
   {
     title: "Blockchain Development",
     description: "Smart contract development and decentralized application architecture on Solana.",
     skills: [
-      { name: "Solana", icon: <Rust /> },
       { name: "Rust", icon: <Rust /> },
-      { name: "Anchor Framework", icon: <Rust /> }
+      { name: "Solana", icon: <Solana /> },
+      { name: "Anchor Framework", icon: <Anchor /> }
     ]
   },
   {
@@ -88,7 +95,7 @@ const skillCategories: SkillCategory[] = [
       { name: "Pandas", icon: <Pandas /> },
       { name: "Matplotlib", icon: <Matplotlib /> },
       { name: "Scikit-Learn", icon: <ScikitLearn /> },
-      { name: "FastAI", icon: <FastAI /> },
+      { name: "FastAI", icon: <Fast_ai /> },
     ]
   },
   {
@@ -96,7 +103,7 @@ const skillCategories: SkillCategory[] = [
     description: "Experience in containerization, orchestration, CI/CD, reverse proxies, and infrastructure automation on Linux-based systems.",
     skills: [
       { name: "Docker", icon: <Docker /> },
-      { name: "Kubernetes", icon: <Linux /> },
+      { name: "Kubernetes", icon: <Kubernetes /> },
       { name: "GitHub Actions", icon: <GitHub /> },
       { name: "Nginx", icon: <Nginx /> },
       { name: "Linux", icon: <Linux /> },
