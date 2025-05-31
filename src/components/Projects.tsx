@@ -16,14 +16,41 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+    {
+    id: "Bookpedia",
+    title: "Bookpedia",
+    description: "A cross-platform book companion app built with Jetpack Compose Multiplatform (CMP). Search books via Open Library API, save favorites offline with Room, and enjoy seamless functionality on Android, iOS, macOS, Windows, and Linux. 🚀",
+    image: "images/bookpedia.png",
+    technologies: ["Kotlin", "openlibrary", "kotlin-multiplatform", "jetpack-compose", "compose-multiplatform", "Koin", "Room"],
+    demoUrl: "https://github.com/anubhav-auth/Bookpedia",
+    githubUrl: "https://github.com/anubhav-auth/Bookpedia"
+  },
+  {
+    id: "Bento",
+    title: "Bento",
+    description: "Bento, a platform that connects restaurants with customers and delivery personnel. Customers can browse a list of restaurants, view menus, place orders, and have them delivered, while restaurant partners and delivery personnel manage their tasks via dedicated apps.",
+    image: "images/bento.png",
+    technologies: [],
+    demoUrl: "https://github.com/anubhav-auth/Bento",
+    githubUrl: "https://github.com/anubhav-auth/Bento"
+  },
   {
     id: "Washup",
     title: "Washup",
     description: "WashUp is a laundry service app for students, offering easy pickup, order tracking, and doorstep delivery with OTP-based login and real-time updates.",
-    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+    image: "images/bento.png",
     technologies: [],
     demoUrl: "https://github.com/anubhav-auth/WashUp",
     githubUrl: "https://github.com/anubhav-auth/WashUp"
+  },
+  {
+    id: "CoinLog",
+    title: "CoinLog",
+    description: "CoinLog is your ultimate financial tracking app designed to help you manage and monitor your finances effortlessly. Whether you're keeping track of daily expenses, overseeing your total income and expenditures, or saving for specific goals with our unique pots feature, CoinLog makes it simple and intuitive.",
+    image: "images/coinlog.png",
+    technologies: [],
+    demoUrl: "https://github.com/anubhav-auth/CoinLog",
+    githubUrl: "https://github.com/anubhav-auth/CoinLog"
   },
   {
     id: "DeWork-Program",
@@ -79,15 +106,7 @@ export const projects: Project[] = [
     demoUrl: "https://github.com/anubhav-auth/FlightPath_11",
     githubUrl: "https://github.com/anubhav-auth/FlightPath_11"
   },
-  {
-    id: "Bento",
-    title: "Bento",
-    description: "Bento, a platform that connects restaurants with customers and delivery personnel. Customers can browse a list of restaurants, view menus, place orders, and have them delivered, while restaurant partners and delivery personnel manage their tasks via dedicated apps.",
-    image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1",
-    technologies: [],
-    demoUrl: "https://github.com/anubhav-auth/Bento",
-    githubUrl: "https://github.com/anubhav-auth/Bento"
-  },
+  
   {
     id: "Bento-backend",
     title: "Bento-backend",
@@ -133,21 +152,13 @@ export const projects: Project[] = [
     demoUrl: "https://github.com/anubhav-auth/rush",
     githubUrl: "https://github.com/anubhav-auth/rush"
   },
-  {
-    id: "Bookpedia",
-    title: "Bookpedia",
-    description: "A cross-platform book companion app built with Jetpack Compose Multiplatform (CMP). Search books via Open Library API, save favorites offline with Room, and enjoy seamless functionality on Android, iOS, macOS, Windows, and Linux. 🚀",
-    image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1",
-    technologies: [],
-    demoUrl: "https://github.com/anubhav-auth/Bookpedia",
-    githubUrl: "https://github.com/anubhav-auth/Bookpedia"
-  },
+
   {
     id: "Scientific_Calculator",
     title: "Scientific Calculator",
     description: "Scientific Calculator is a versatile Android application that functions as both a standard calculator and a scientific calculator. With a simple tap, you can switch between modes to perform basic arithmetic or advanced scientific calculations, making it a powerful tool for students, engineers, and anyone who needs to perform complex calculations.",
-    image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1",
-    technologies: [],
+    image: "images/calc.png",
+    technologies: ["Kotlin", "Android", "jetpack-compose"],
     demoUrl: "https://github.com/anubhav-auth/Scientific_Calculator",
     githubUrl: "https://github.com/anubhav-auth/Scientific_Calculator"
   },
@@ -155,7 +166,7 @@ export const projects: Project[] = [
     id: "PokeDex",
     title: "PokeDex",
     description: "This application allows users to explore and learn about various Pokémon, displaying detailed stats and images fetched from the PokéAPI. Whether you're a Pokémon enthusiast or just curious about the world of Pokémon, this app provides an engaging and informative experience.",
-    image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1",
+    image: "images/pokedex.png",
     technologies: [],
     demoUrl: "https://github.com/anubhav-auth/PokeDex",
     githubUrl: "https://github.com/anubhav-auth/PokeDex"
@@ -164,20 +175,12 @@ export const projects: Project[] = [
     id: "WeatherApp",
     title: "WeatherApp",
     description: "WeatherApp is a sleek and modern Android application that provides accurate and up-to-date weather information for any location. Developed using Kotlin and Jetpack Compose, this app offers a seamless and intuitive user experience, allowing you to stay informed about the weather wherever you are.",
-    image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1",
+    image: "images/weather.png",
     technologies: [],
     demoUrl: "https://github.com/anubhav-auth/Weather",
     githubUrl: "https://github.com/anubhav-auth/Weather"
   },
-  {
-    id: "CoinLog",
-    title: "CoinLog",
-    description: "CoinLog is your ultimate financial tracking app designed to help you manage and monitor your finances effortlessly. Whether you're keeping track of daily expenses, overseeing your total income and expenditures, or saving for specific goals with our unique pots feature, CoinLog makes it simple and intuitive.",
-    image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1",
-    technologies: [],
-    demoUrl: "https://github.com/anubhav-auth/CoinLog",
-    githubUrl: "https://github.com/anubhav-auth/CoinLog"
-  },
+  
 ];
 
 const Projects = () => {
