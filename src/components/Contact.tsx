@@ -116,31 +116,28 @@ const Contact = () => {
                 <h3 className="text-xl font-semibold mb-6">Connect With Me</h3>
                 
                 <div className="flex flex-wrap gap-4">
-                  <a href="#github" className="flex items-center p-3 bg-white/5 hover:bg-white/10 rounded-lg transition-colors">
+                  <a href="https://github.com/anubhav-auth" className="flex items-center p-3 bg-white/5 hover:bg-white/10 rounded-lg transition-colors">
                     <GitHub/>
                   </a>
-                  <a href="#linkedin" className="flex items-center p-3 bg-white/5 hover:bg-white/10 rounded-lg transition-colors">
+                  <a href="https://www.linkedin.com/in/anubhav-auth/" className="flex items-center p-3 bg-white/5 hover:bg-white/10 rounded-lg transition-colors">
                     <Linkedin/>
                   </a>
-                  <a href="#twitter" className="flex items-center p-3 bg-white/5 hover:bg-white/10 rounded-lg transition-colors">
+                  <a href="https://x.com/anubhavauth" className="flex items-center p-3 bg-white/5 hover:bg-white/10 rounded-lg transition-colors">
                     <Twitter/>
                   </a>
-                  <a href="#twitter" className="flex items-center p-3 bg-white/5 hover:bg-white/10 rounded-lg transition-colors">
+                  <a href="https://www.instagram.com/unholy.human/" className="flex items-center p-3 bg-white/5 hover:bg-white/10 rounded-lg transition-colors">
                     <Instagram/>
                   </a>
-                  <a href="#twitter" className="flex items-center p-3 bg-white/5 hover:bg-white/10 rounded-lg transition-colors">
+                  {/* <a href="#twitter" className="flex items-center p-3 bg-white/5 hover:bg-white/10 rounded-lg transition-colors">
                     <Devto/>
                   </a>
                   <a href="#twitter" className="flex items-center p-3 bg-white/5 hover:bg-white/10 rounded-lg transition-colors">
                     <Medium/>
-                  </a>
-                  <a href="#twitter" className="flex items-center p-3 bg-white/5 hover:bg-white/10 rounded-lg transition-colors">
-                    <Medial/>
-                  </a>
-                  <a href="#twitter" className="flex items-center p-3 bg-white/5 hover:bg-white/10 rounded-lg transition-colors">
+                  </a> */}
+                  {/* <a href="#twitter" className="flex items-center p-3 bg-white/5 hover:bg-white/10 rounded-lg transition-colors">
                     <Codeforces/>
-                  </a>
-                  <a href="#twitter" className="flex items-center p-3 bg-white/5 hover:bg-white/10 rounded-lg transition-colors">
+                  </a> */}
+                  <a href="https://leetcode.com/u/unholyhuman/" className="flex items-center p-3 bg-white/5 hover:bg-white/10 rounded-lg transition-colors">
                     <Leetcode/>
                   </a>
                 </div>
