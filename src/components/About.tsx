@@ -1,7 +1,6 @@
-
 import { useEffect, useRef } from 'react';
-import img1 from '../assets/img1.jpg'
-import img2 from '../assets/img2.jpg'
+import img1 from '../assets/img1.jpg';
+import img2 from '../assets/img2.jpg';
 
 const About = () => {
   const contentRef = useRef<HTMLDivElement>(null);
@@ -44,7 +43,7 @@ const About = () => {
           >
             <div className="w-full md:w-2/5">
               <div className="relative">
-                <div className="aspect-square rounded-2xl overflow-hidden border-2 border-neon-purple/30">
+                <div className="aspect-[3/4] rounded-2xl overflow-hidden border-2 border-neon-purple/30">
                   <img 
                     src={img1}
                     alt="Developer" 
@@ -52,7 +51,7 @@ const About = () => {
                   />
                 </div>
                 <div className="absolute -bottom-4 -right-4 w-24 h-24 rounded-full bg-neon-blue/20 backdrop-blur-xl border border-neon-blue/30 flex items-center justify-center z-10">
-                  <span className="font-bold text-xl">1+</span>
+                  <span className="font-bold text-xl">2+</span>
                   <span className="text-xs ml-1">Years<br/>Exp.</span>
                 </div>
               </div>
@@ -66,8 +65,19 @@ const About = () => {
               </p>
 
               <p className="text-white/70 mb-6">
-              I bring a product-driven mindset, building scalable and impactful solutions across food-tech, campus automation, and real-time services. I’m deepening my expertise in AI/ML, DevOps, and distributed systems, while mentoring peers and leading technical initiatives from concept to deployment.
+                I bring a product-driven mindset, building scalable and impactful solutions across food-tech, campus automation, and real-time services. I’m deepening my expertise in AI/ML, DevOps, and distributed systems, while mentoring peers and leading technical initiatives from concept to deployment.
               </p>
+
+              <div className="mb-6">
+                <a
+                  href="https://drive.google.com/file/d/1HYhoRmG4z5jrakxIfWLeLpQO7CNqwwSY/view"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block max-w-[200px] mx-auto px-6 py-2.5 text-sm font-semibold text-white bg-transparent border-2 border-neon-purple/50 rounded-full hover:bg-neon-purple/20 hover:border-neon-purple transition-all duration-300 text-center"
+                >
+                  View My Resume
+                </a>
+              </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
